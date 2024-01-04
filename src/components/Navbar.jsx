@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  {faBars}  from '@fortawesome/free-solid-svg-icons';
+import {  Bars3Icon,
+  ShoppingCartIcon,
+  XMarkIcon,} from '@heroicons/react/24/solid'
 
 export default function Navbar() {
   const userRole = "user";
@@ -47,7 +50,8 @@ export default function Navbar() {
   return (
     <div className="min-h-full">
       <Disclosure as="nav" className="">
-        {({ open }) => (<>
+        {({ open }) => (
+        <>
             <div className="flex items-center justify-between px-3 md:px-6">
         <Link to="/">
           <div className=" flex items-center flex-shrink-0">
@@ -93,7 +97,7 @@ export default function Navbar() {
               <div className="flex items-center">
                 <img src="/cart.png" alt="" className="h-7 w-7" />
 
-                <p className="rounded-full p-1 bg-violet-300">
+                <p className="inline-flex items-center rounded-md mb-7 -ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
                   {cartItems.length}
                 </p>
               </div>
@@ -125,27 +129,103 @@ export default function Navbar() {
                 })}
               </Menu.Items>
             </Menu>
-            
-            <div className="-mr-2 flex md:hidden">
+            </div> 
+        </div>
+
+            <div className="-mr-1 flex md:hidden">
                     {/* Mobile menu button */}
-                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md  p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
-                       
-                        <img src="/xmark-solid.svg" className="block h-6 w-6" alt="" />
+                      <XMarkIcon
+                      className="block h-6 w-6"
+                      aria-hidden="true"
+                    />
+                      
                       ) : (
-                        <img src="/bar-solid.svg" className="block h-6 w-6" alt="" />
+                        <Bars3Icon
+                          className="block h-6 w-6"
+                          aria-hidden="true"
+                        />
+                        
                       )}
                     </Disclosure.Button>
                   </div>
 
-          </div>
-        </div>
+          
+      
 
         
       </div>
-        
+      <Disclosure.Panel className="md:hidden">
+                <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                  {menuitems.map((item) => (
+                    <Disclosure.Button
+                      key={item.name}
+                      as="a"
+                      href={item.link}
+                      className={clsx(
+                        item.current
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        "block rounded-md px-3 py-2 text-base font-medium"
+                      )}
+                      aria-current={item.current ? "page" : undefined}
+                    >
+                      {item.name}
+                    </Disclosure.Button>
+                  ))}
+                </div>
+                <div className="border-t border-gray-700 pb-3 pt-4">
+                  <div className="flex items-center px-5 space-x-3">
+                    <div className="flex-shrink-0">
+                      <img
+                        className="h-10 w-10 rounded-full"
+                        src="user-profile-icon.png"
+                        alt=""
+                      />
+                    </div>
+                    <div className="ml-3">
+                      <div className="text-base font-medium leading-none text-white">
+                        Pranay
+                      </div>
+                      <div className="text-sm font-medium leading-none text-gray-400">
+                        user@gmail.com
+                      </div>
+                    </div>
+                    <Link to="/cart">
+                      <button
+                        type="button"
+                        className="ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        <ShoppingCartIcon
+                          className="h-6 w-6"
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </Link>
+                    {cartItems.length > 0 && (
+                      <span className="inline-flex items-center rounded-md mb-7 -ml-3 bg-red-50 px-2 py-1 text-xs font-medium text-red-700 ring-1 ring-inset ring-red-600/10">
+                        {cartItems.length}
+                      </span>
+                    )}
+                  </div>
+                  {/* <div className="mt-3 space-y-1 px-2">
+                    {menuitems.map((item) => (
+                      <Disclosure.Button
+                        key={item.name}
+                        as="a"
+                        href={item.link}
+                        className="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white"
+                      >
+                        {item.name}
+                      </Disclosure.Button>
+                    ))}
+                  </div> */}
+                </div>
+              </Disclosure.Panel>
+
         </>)}
       
       </Disclosure>
