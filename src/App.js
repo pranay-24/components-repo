@@ -5,6 +5,7 @@ import Login from './components/Login';
 import { BrowserRouter } from 'react-router-dom';
 import LoginModern from './components/LoginModern';
 import Navbar from './components/Navbar';
+import Testimonial1 from './components/Testimonial1';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <div>
  {/* <Login />
  <LoginModern /> */}
+ <Testimonial1 />
     </div>
     </BrowserRouter>
   );
