@@ -10,7 +10,7 @@ import Testimonial1 from './components/Testimonial1';
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
+    {/* <Navbar /> */}
     <div>
  {/* <Login />
  <LoginModern /> */}
