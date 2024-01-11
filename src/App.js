@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import LoginModern from './components/LoginModern';
 import Navbar from './components/Navbar';
 import Testimonial1 from './components/Testimonial1';
-
+import SendLoveButton from './components/SendLoveButton';
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +14,8 @@ function App() {
     <div>
  {/* <Login />
  <LoginModern /> */}
- <Testimonial1 />
+ {/* <Testimonial1 /> */}
+ <SendLoveButton name="John" />
     </div>
     </BrowserRouter>
   );
