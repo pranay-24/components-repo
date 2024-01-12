@@ -42,7 +42,7 @@ export default function SendLoveButton({name}) {
       >
         <i
           className={clsx(
-            clickText === "Thank You!"
+            clickText === "Thank You"
               ? "transition delay-150 ease-in -translate-y-6 duration-[1000ms]"
               : "",
             "fa-solid fa-heart text-rose-500 text-3xl "
