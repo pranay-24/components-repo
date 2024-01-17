@@ -7,16 +7,23 @@ import LoginModern from './components/LoginModern';
 import Navbar from './components/Navbar';
 import Testimonial1 from './components/Testimonial1';
 import SendLoveButton from './components/SendLoveButton';
+import Sidebar from './components/Sidebar';
+import MobileView from './components/MobileView';
+import TablePeople from './components/TablePeople';
+
 function App() {
   return (
     <BrowserRouter>
+    <Sidebar/>
     {/* <Navbar /> */}
     <div>
  {/* <Login />
  <LoginModern /> */}
  {/* <Testimonial1 /> */}
- <SendLoveButton name="John" />
+ {/* <SendLoveButton name="John" /> */}
+ {/* <MobileView /> */}
     </div>
+    <TablePeople />
     </BrowserRouter>
   );
 }
