@@ -1,50 +1,77 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 // import {process, env } from 'process'
 export default function TablePeople() {
 
+// const [city,setCity] = useState('Toronto')
 
-useEffect(()=>{
 
-const fetchData =async ()=>{
-    const url = 'https://linkedin-companies-data.p.rapidapi.com/?vanity_name=microsoft';
+
+const fetchWeather =async (city)=>{
+
+  
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}`;
     const options = {
         method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': process.env.REACT_APP_API_KEY,
-            'X-RapidAPI-Host': 'linkedin-companies-data.p.rapidapi.com'
-        }
+        
     };
     
     try {
         const response = await fetch(url, options);
-        const result = await response.text();
-        console.log(result);
+        const result = await response.json();
+        
+        console.log(result.main.temp);
+        return { 
+          city:city,
+           temperature:result.main.temp,
+        }
     } catch (error) {
         console.error(error);
     }
 }
- fetchData()   
+
+const weatherData = []
+
+const fetchWeatherCities = async(cities)=>{
+ 
+
+  for (const city in cities){
+    const result = await fetchWeather(city)
+    weatherData.push(result)
+  }
+  console.log(weatherData)
+ 
+}
+
+useEffect(()=>{
+fetchWeatherCities(cities)
 
 },[])
 
-    
+ const cities = ['Toronto', 'Vancouver', 'Miami', 'Chicago']   
 
   return (
     <div>
       <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th></th>
-                <th>Country</th>
+                <th>City</th>
+                <th>Temperature</th>
+                
             </tr>
         </thead>
         <tbody>
-           {/* {
-            .map((idx,data)=>{
-
+           {
+            cities.map((idx,city)=>{
+              return(
+                <>
+                <tr key={idx}>
+                  <td>{city}</td>
+                  <td></td>
+                </tr>
+                </>
+              )
             })
-           }      */}
+           }     
             <tr>
 
             </tr>
