@@ -14,7 +14,7 @@ import TablePeople from './components/TablePeople';
 function App() {
   return (
     <BrowserRouter>
-    <Sidebar/>
+    {/* <Sidebar/> */}
     {/* <Navbar /> */}
     <div>
  {/* <Login />
