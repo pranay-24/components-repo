@@ -10,6 +10,8 @@ import SendLoveButton from './components/SendLoveButton';
 import Sidebar from './components/Sidebar';
 import MobileView from './components/MobileView';
 import TablePeople from './components/TablePeople';
+import RotateImage from './components/RotateImage';
+import InfiniteLoading from './components/InfiniteLoading';
 
 function App() {
   return (
@@ -23,7 +25,8 @@ function App() {
  {/* <SendLoveButton name="John" /> */}
  {/* <MobileView /> */}
     </div>
-    <TablePeople />
+    {/* <RotateImage /> */}
+    <InfiniteLoading />
     </BrowserRouter>
   );
 }
