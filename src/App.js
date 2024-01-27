@@ -26,7 +26,8 @@ function App() {
  {/* <MobileView /> */}
     </div>
     {/* <RotateImage /> */}
-    <InfiniteLoading />
+    {/* <InfiniteLoading /> */}
+ <TablePeople />
     </BrowserRouter>
   );
 }

@@ -1,0 +1,30 @@
+ #custome_table{
+    background-color: aqua;
+    margin-top:25px;
+    
+    }
+#info {
+    background-color: blue;
+    margin:auto;
+    font-size: 30px;
+    
+}
+
+.custom-class{
+    display:block;
+    width:full;
+  margin-bottom:30px; 
+  position: relative;
+  border: 4px;
+    border-color: black;
+}
+custom-class::after{
+    content:'';
+    position: absolute;
+    top:-5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    
+    box-shadow: 5px 5px 4px 4px black;
+}

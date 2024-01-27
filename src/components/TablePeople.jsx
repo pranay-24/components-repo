@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 // import {process, env } from 'process'
+import './css/TableCSS.css'
 
 export default function TablePeople() {
 
@@ -64,11 +65,11 @@ return classes.filter(Boolean).join(" ")
 
   return (
     <div className=''>
-      <table className='mx-auto text-3xl shadow-xl font-work border border-gray-500'>
-        <thead className='bg-gray-200'>
-            <tr className='border border-gray-500 p-5  '>
-                <th className='border-b border-gray-500 p-5 w-[300px]'>City</th>
-                <th className='border-b border-gray-500 p-5 w-[400px] '>Temperature</th>
+      <table className=' text-3xl font-work border border-gray-500 custom-class'>
+        <thead className='bg-gray-200 '>
+            <tr className='border border-gray-500  '>
+                <th className='border-b border-gray-500 p-5 '>City</th>
+                <th className='border-b border-gray-500 p-5  '>Temperature</th>
                 
             </tr>
         </thead>
@@ -89,6 +90,9 @@ return classes.filter(Boolean).join(" ")
             </tr>
         </tbody>
       </table>
+      <div >
+        <p id="info">Hello this is a table </p>
+      </div>
     </div>
   )
 }
