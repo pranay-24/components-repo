@@ -12,6 +12,7 @@ import MobileView from './components/MobileView';
 import TablePeople from './components/TablePeople';
 import RotateImage from './components/RotateImage';
 import InfiniteLoading from './components/InfiniteLoading';
+import SearchIcon from './components/SearchIcon';
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
     </div>
     {/* <RotateImage /> */}
     {/* <InfiniteLoading /> */}
- <TablePeople />
+ {/* <TablePeople /> */}
+ <SearchIcon />
     </BrowserRouter>
   );
 }
