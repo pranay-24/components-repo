@@ -13,6 +13,8 @@ import TablePeople from './components/TablePeople';
 import RotateImage from './components/RotateImage';
 import InfiniteLoading from './components/InfiniteLoading';
 import SearchIcon from './components/SearchIcon';
+import FormValidation from './components/FormValidation';
+
 
 function App() {
   return (
@@ -29,7 +31,8 @@ function App() {
     {/* <RotateImage /> */}
     {/* <InfiniteLoading /> */}
  {/* <TablePeople /> */}
- <SearchIcon />
+ {/* <SearchIcon /> */}
+ <FormValidation />
     </BrowserRouter>
   );
 }
